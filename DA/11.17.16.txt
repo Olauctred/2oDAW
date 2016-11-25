@@ -1,0 +1,6 @@
+Registros DNS
+
+IN A : Resolución directa
+IN PTR : Resolución inversa
+IN SOA : (Start Of Authority) Nodo que sirve el DNS
+IN NS : Name Server

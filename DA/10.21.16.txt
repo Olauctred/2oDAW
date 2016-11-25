@@ -1,0 +1,9 @@
+*copy con nombre_archivo --> comando copiar, desde con = consola a archivo.
+ "F6 e Intro" en input de consola.
+-------------------------------------------------------
+FILEZILLA
+- Cliente; Descargar el zip, no el instalador.
+WINSCP
+- Cliente; Versión portable.
+- Conectar en modo pasivo a ftp.rediris.es desde máquina virtual.
+-------------------------------------------------------

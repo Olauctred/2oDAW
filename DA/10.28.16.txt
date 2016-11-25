@@ -1,0 +1,15 @@
+||--TEMA 2--||
+||--SERVIDOR WEB SOBRE IIS--||
+
+1. Configura IIS para que solamente escuche por el puerto 81
+2. Crea un nuevo fichero índice (index.htm) con un título y un encabezado, en tu directorio de trabajo IIS (C:\inetpub\wwwroot)
+	2.1.Crea un subdirectorio (del "DocumentRoot") llamado daw
+        2.2.Explica cómo configurar IIS para que muestre el contenido del subdirectorio que acabas de crear
+3. Copia los ficheros web de muestra a tu subdirectorio daw
+4. Prueba los ficheros web de muestra con Internet Explorer y Firefox
+
+1.
+- Herramientas Administrativas => IIS => Default Site =>
+Bindings o Enlaces => Ports:81
+- Abrir el puerto 81 en el Firewall de Windows. En reglas de entrada crear una regla
+custom con permisos para todos los programas.

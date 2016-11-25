@@ -1,0 +1,14 @@
+||--TEMA 2--||
+||--SERVIDOR WEB SOBRE IIS--||
+
+    1. Configura IIS para que solamente escuche por el puerto 81
+	- IIS => Default Sites =>	Binding => puerto 81
+	- Configurar nueva regla entrada para protocolo TCP para el firewall
+	- *Explicar diferencia TCP y UDP
+    2. Crea un nuevo fichero índice (index.htm) con un título y un encabezado, en tu directorio de trabajo IIS (C:\inetpub\wwwroot)
+	- *En "Default Document" aparece el "DirectoryIndex" del IIS
+    3.
+        a. Crea un subdirectorio (del "DocumentRoot") llamado daw
+        b. Explica cómo configurar IIS para que muestre el contenido del subdirectorio que acabas de crear
+    4. Copia los ficheros web de muestra a tu subdirectorio daw
+    5. Prueba los ficheros web de muestra con Internet Explorer y Firefox

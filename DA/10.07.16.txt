@@ -1,0 +1,16 @@
+— Instalación VMware Tools en W2008R2
+	Player->Manage->Install VMware Tools
+------------------------------------------------
+Probar comandos Windows:
+— ipconfig
+— route print
+— nslookup
+— tracert
+— ftp
+
+Instalar ftp server:
+— Roles->IIS->Activar FTP
+— FTP Nombre
+— Directorio FTP c:\inetpub\ftproof
+
+*SSL investigar habilitar en  win y linux

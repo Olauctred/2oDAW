@@ -1,0 +1,14 @@
+|=========================|
+|=DNS=|
+|=========================|
+
+1. DNS
+Todo cuelga de .ROOT, existen 13 en todo el mundo
+TLDs (Top Level Domains) .es, .com, .mil, .gov...
+A partir de aquí puede haber ya un Host o dominios de Segundo nivel o subdominios.
+
+1. FQDN - Fully Qualified Domain Name
+	Ejemplos:
+	- www.iesmarenostrum.com
+	- ftp.ua.es
+	- ftp.dtic.ua.es

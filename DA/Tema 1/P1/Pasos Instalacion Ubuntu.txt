@@ -1,0 +1,27 @@
+Pasos instalación Ubuntu
+Ubuntu Installation
+
+CD
+Choose Language + Install Ubuntu
+Preparing to install
+Installation type
+Erase disk and install Ubuntu
+Where are you?
+Keyboard layout
+Who are you?
+Reboot (disable hardware acceleration)
+Login
+Install VMware tools
+Test network
+VMware network settings
+Ubuntu network settings
+Firefox
+Ubuntu network
+
+Commands
+ifconfig
+route
+nslookup
+ping
+traceroute (install, works better with bridged network)
+ftp (passive if using NAT)

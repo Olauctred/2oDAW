@@ -1,0 +1,27 @@
+* Comprobación de reglas del cortafuegos, en cliente y servidor.
+* Windows distinge entre:
+	- Autenticación: Quién puede realizar acciones
+	- Autorización: Qué acciones puede realizar un usuario (permisos)
+-----------------------------------------------------------
+Práctica 2 Windows
+1. Configura el servidor ftp para permitir que los usuarios anónimos puedan conectarse
+2. Configura el servidor ftp para no permitir que los usuarios de sistema puedan conectarse
+	- IIS, Sites, ftpserver, FTP Authentication
+	- En Windows "Basic users" son los usuarios del sistema.
+	- Comprobar ftp anónimo.
+	- Comprobar ftp sistema. 
+		*Comando user: en ftp pide el usuario. 
+		**El error es genérico tanto si falla la contraseña, falla el usuario o ambos.
+		***Error 530, los errores 500 son de servidor.
+3. Configura el servidor ftp para permitir que los usuarios anónimos puedan subir archivos
+	(A nivel ftp)
+	- FTP Athorization rules, permitir escribir.
+	(A nivel de sistema)
+	*función + E = Abre el explorador.
+	- c:\inetpub\ftproot, properties, security, edit, add, IUSR
+	*IUSR: Usuario ficticio para las acciones sobre el IIS
+	- Dar permisos Full Control
+
+	
+4. Sube un archivo al servidor ftp desde tu máquina real
+5. Descarga un archivo del servidor ftp a tu máquina real

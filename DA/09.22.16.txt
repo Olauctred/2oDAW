@@ -1,0 +1,2 @@
+-Grupos predeterminados de Windows
+-UNC Universal Naming Convention. Syntax: \\unc

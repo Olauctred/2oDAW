@@ -1,0 +1,51 @@
+||--TEMA 2--||
+||--SERVIDOR WEB SOBRE APACHE2--||
+
+UBUNTU
+   1.Ve al directorio de trabajo de apache (/var/www)
+        1.1.Cambia el fichero índice por defecto (index.html)
+        1.2.Crea un nuevo fichero índice con un título y un encabezado
+   2.Ve al directorio de configuración de apache (/etc/apache2)
+        2.1.Haz los cambios necesarios para que apache escuche en el puerto 81 en vez del puerto 80. Debes cambiar los siguientes parámetros
+            2.1.1.Listen (/etc/apache2/ports.conf)
+            2.1.2.NameVirtualHost
+            2.1.3.VirtualHost (/etc/apache2/sites-enabled/000-default)
+        2.2.Explica el valor del parámetro DocumentRoot
+        2.3.Respecto al parámetro DirectoryIndex
+            2.3.1.Explica su valor
+            2.3.2.Cambia el nombre de tu fichero índice por defecto
+        2.4.Respecto al parámetro Directory
+            2.4.1.Crea un subdirectorio (del "DocumentRoot") llamado daw
+            2.4.2.Configura el subdirectorio que acabas de crear para que nadie pueda ver su contenido (Options None)
+    3.Copia los ficheros web de muestra a tu subdirectorio daw
+    4.Prueba los ficheros web de muestra con Internet Explorer y Firefox
+-----------------------------------------------------------------------------------
+1. Directorio /var/www
+	1.1.
+	- sudo mv index.html index.html.old
+	- abrir la web. Si sigue en caché "ALT + F5" para forzar a bajar la web.
+	1.2.
+	- sudo gedit index.html
+2. Directorio /etc/apache2
+	2.1 archivo ports.conf
+	- Listen 81
+	- NameVirtualHost ip_servidor:puerto_de_escucha | ej: *:81 o x.x.x.x:81
+	- VirtualHost (/etc/apache2/sites-enabled/000-default)
+		- En el directorio sites-enabled aparece un archivo de configuración
+		por cada sitio web.
+		- Un fichero con "l" delante de los permisos significa que es un
+		softlink = acceso directo
+		- <VirtualHost *:81>
+	- reiniciar servicio
+	2.2 BUSCAR UN CONTENIDO EN DISTINTOS FICHEROS
+	    COMANDO grep | ejemplo: grep DocumentRoot -r(recursivo, para acceder a todos los subdirectorios) *(Todos los ficheros)
+	    La directiva DocumentRoot indica el directorio contenedor del sitio web.
+	2.3 La directiva DirectoryIndex es una lista de candidatos a índice del sitio web.
+	2.4 
+	- mkdir /var/www/daw
+	- En /etc/apache2/sites-enabled/000-default crear directiva para el directorio y
+	en la directiva Options definir None.
+3. unzip ~/Desk"Tab"
+4.
+- el codigo VBscript solo funciona en internet explorer.
+- Para abrir internet explore, FCN + R => Abrir: iexplore

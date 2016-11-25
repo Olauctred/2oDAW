@@ -1,0 +1,9 @@
+Multidifusión
+224.0.0.0        240.0.0.0      En vínculo         127.0.0.1    331
+-------------------------------
+Limited broadcast
+255.255.255.255  255.255.255.255      En vínculo         127.0.0.1    331
+	Se envía un paquete de datos con la dirección 255.255.255.255.
+	Se refiere a todos los hosts en la subred local y es reconocida por cada host.
+	Los routers no reenvían este paquete.
+-------------------------------

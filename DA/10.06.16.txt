@@ -1,0 +1,18 @@
+*SSID: Service Set Idetifier
+*UUID: Universally Unique Identifier
+*ISP: Internet Service Provider
+
+https://help.ubuntu.com/12.04/serverguide/ftp-server.html //Documentación vsftpd
+-----------------------
+Ips 169.*.*.* APIPA/DHCP
+
+Clases IP
+A 0
+B 10
+C 110
+------
+D 1110
+E 1111
+
+Control servicios en Linux:
+	sudo service (servicio) (opciones)

@@ -1,0 +1,16 @@
+MODELO OSI
+CAPAS
+	- Física : Hubs, Cables
+	- Enlace: MAC, switch, punto de acceso
+	- Red: Dirección IP, componentes con tarjeta de red ej. un router.
+	- Transporte: Socket = IP + Puerto
+	- Sesión:
+	- Presentación:
+	- Aplicación:
+
+CONFIGURACIÓN TCP/IP
+Configuración puede ser manual o dinámica si se configura por DHCP
+	- Dirección IP
+	- Máscara de red
+	- Puerta de enlace: Dirección IP del router que reconduce a redes externas a la de la IP.
+	- DNS: servicio que realiza traducciones de IP a Nombre de dominio y al contrario.

@@ -1,0 +1,52 @@
+Revisión prácticas:
+*nslookup --> 127.0.0.1 | Aparece el host porque toma
+como servidor dns la herramienta DNSMasq (Chaché DNS)
+*lookback --> Nombre DNS de conexión al propio host.
+----------------------------------------------------------
+!!¡¡ Administrar servicios Linux
+	sudo service vsftpd (acción)
+
+Servidor ftp en linux ubuntu (II)
+1. Configura el servidor ftp para permitir que los usuarios anónimos puedan conectarse
+2. Configura el servidor ftp para no permitir que los usuarios de sistema puedan conectarse
+3. Configura el servidor ftp para permitir que los usuarios anónimos puedan subir archivos
+4. Sube un archivo al servidor ftp desde tu máquina real
+5. Descarga un archivo del servidor ftp a tu máquina real
+
+Cliente ftp
+- FTP (Cliente básico)
+- Cliente gráfico
+- Navegador Web
+	- URL: protocolo://nombre o IP[:puerto][/ruta/archivo]
+
+Pruebas
+- Locales
+- Remotas
+
+Accesos (Autenticación)
+- Anónima (Usuarios ftp [/home/ftp])
+- Usuario del sistema
+
+Permisos Linux - Ejemplo
+d     rwx        r-x    r-x    2      root        ftp         4096 Oct 6 ftp
+  User(Owner)   Group    Other     Owner(User) Owner(Group)
+d=Directorio
+
+
+CONFIGURACIÓN FTP
+sudo gedit /etc/vsftpd.conf
+
+1. anonymous_enable=YES
+2. #local_enable=YES
+3. 	+ write_enable=YES | 
+	+ #anon_upload_enable=NO
+	+ anon_other_write_enable=YES #Para sobreescribir archivos o renombrarlos se usa la directiva 
+       *+ anon_umask=022 #Máscara de usario.
+	+ anon_mkdir_write_enable=YES #Importante para despliegue de sitios web, ya que contienen árboles de directorios.
+
+	~$ sudo mkdir /srv/ftp/incoming
+	~$ sudo chown ftp:ftp /svr/ftp/incoming
+# El símbolo <!> se usa en el cliente FTP para indicar que a continuación hay un comando del sistema local.
+# Ejemplo sombre Windows: !dir
+4. put ftpTest.txt
+5. !del ftpTest.txt, get ftpTest.txt

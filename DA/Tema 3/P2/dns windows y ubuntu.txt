@@ -1,0 +1,32 @@
+|====================================|
+|=DNS=|
+|====================================|
+ WINDOWS
+
+1(2). Instala el servicio DNS, y comprueba si está en ejecución
+	- Add rol DNS
+2(1). Configura tu red para usar el servicio DNS previdamente instalado
+	- Configurar IP estática
+	- DNS = 127.0.0.1 porque el nuevo rol DNS traducirá los nombres. 
+3. Prueba el servicio DNS usando el comando nslookup
+4. Deshabilita el servicio DNS y prueba el comando nslookup
+	- Herramientas administrativas => DNS=> DNS Manager
+	- clic derecho => Stop
+5. Habilita de nuevo el servicio DNS y prueba el comando nslookup
+
+UBUNTU
+
+1. Instala el servicio DNS, y comprueba si está en ejecución
+2. Configura tu red para usar el servicio DNS previdamente instalado
+	- Deshabilitar el miniservidor DNS de ubuntu "dnsmasq"
+	- /etc/NetworkManager/NetworkManager.conf
+		#dns = dnsmasq
+		sudo service network-manager "Reiniciar"
+	- Hay que desactivar el módulo DNSSEC de bind.
+	- /etc/bind/named.conf : Aparecen "includes" de otros ficheros.
+	- /etc/bind/named.conf.options
+		dnssec-validation no
+	- Reiniciar Bind9
+3. Prueba el servicio DNS usando el comando nslookup
+4. Deshabilita el servicio DNS y prueba el comando nslookup
+5. Habilita de nuevo el servicio DNS y prueba el comando nslookup

@@ -1,0 +1,22 @@
+|----------------------------|
+|-Servidor dns en linux ubuntu / Windows 2008 R2-|
+|----------------------------|
+
+*ipconfig/release : Coger nueva configuración de red
+
+1. Explica la configuración de red (NAT) de tu máquina virtual Windows
+   2008 R2 y Linux Ubuntu 12.04
+	(FOTOGRAFÍAS EN EL MOVIL)
+	- 192.168.127.1 = VMnet8
+	- 192.168.127.2 = Gateway
+2. Prueba tu cliente dns Windows 2008 R2 y Linux Ubuntu 12.04
+	- nslookup : Traduce nombre de dominio a IP (resolución directa) y
+		de IP a nombre de dominio (resolución inversa). !IMPORTANTE
+	2.1. nslookup www.iesmarenostrum.com
+	2.2. nslookup (IP de www.iesmarenostrum.com)
+	
+3. Explica la configuración de red (Bridged) de tu máquina virtual Windows
+   2008 R2 y Linux Ubuntu 12.04
+	- Asegurarse que aparece la conexión "Bridge" en las opciones de configuración
+	de adaptadores de red de VMware. En caso contrario, restaurar valores por
+	para que aparezca el adaptador.

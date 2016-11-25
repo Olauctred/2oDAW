@@ -1,0 +1,32 @@
+Integración de los servicios ftp y http
+
+Elabora un manual de instalación y configuración con capturas de pantalla, explicando los siguientes pasos
+
+    1. Crea un sitio ftp IIS vinculado al "DocumentRoot" de tu sitio web predeterminado
+	- Lo primero es PARAR el ftp por defecto y desactivar el inicio automático.
+	- Sites => New sitio ftp
+	- Configurar a nivel de sistema los permisos de usuarios IUSR
+    2. Prueba el sitio ftp IIS creado en el punto anterior con FileZilla
+        2.1. Descarga un documento
+        2.2. Sube un documento
+    3. Configura vsftpd para que se conecte al "DocumentRoot" de tu servidor web apache. IMPORTATE: debes crear un nuevo usuario local (por ejemplo, "www")
+	- sudo useradd www
+	- sudo passwd www
+	- sudo gedit /etc/passwd
+		- www:x:1001:1001:Descripción_del_user:/var/www:/bin/sh
+		www usuario
+		x Significa que tiene clave, pero esta oculta
+		1001:1001 Identificadores de usuario y grupo
+		/var/www Directorio de trabajo
+		/bin/sh Interprete de comandos asociado
+
+	- sudo gedit /etc/vsftpd.conf
+		local_enable = YES
+		local_umask = 022 | Significa que a los permisos 777 del directorio se le resta el umask.
+			777 - 022 = 755 => permisos 
+	- sudo chown www:www Directorio
+		* Al crear usuarios se crea un grupo propio con el nombre del usuario
+		* Los grupos se pueden ver en /etc/group...
+    4. Prueba la nueva configuración de vsftpd con FileZilla
+        4.1. Descarga un documento
+        4.2. Sube un documento
