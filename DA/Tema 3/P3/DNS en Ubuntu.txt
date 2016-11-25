@@ -1,0 +1,43 @@
+Para volver a poner bien el hostname
+# mount -o remount,rw /
+# nano /etc/hosts
+
+1. Crea una zona directa para un dominio llamado dpaw.daw.com con dos equipos o "hosts" (ubuntu y w2008r2). Prueba la zona.
+- sudo gedit /etc/bind/named.conf
+- sudo gedit /etc/bind/named.conf.default-zones
+	- zonas directas son las que tienen nombre de dominio
+	- zonas inversas son las que enpiezan por (número.in)
+	- crear zona directa nueva: 
+		zone "dpaw.daw.com" {
+		type master : Primario en windows
+		file "/etc/bind/db.dpaw.daw.com";
+	- copiar la zona db.local : sudo cp db.local db.dpaw.daw.com
+	- sudo gedit db.dpaw.daw.com : Abrir el fichero de zona, los comentarios aparecen precedidos por ";".
+		Transferencia de zona DNS : serial sumar 1
+	- Anular la directiva AAAA
+	- "@ IN NS ubuntu12.dpaw.daw.com."
+	- "@ IN SOA dpaw.daw.com. ubuntu12.dpaw.daw.com."
+	- "ubuntu12 IN A 192.168.127.(Parte de host de ubuntu)"
+	- "(nombre host windows server) IN A 192.168.127.(Parte de host de windows)"
+
+	PRUEBA CON NSLOOKUP
+		
+2. Crea una zona inversa para la red de tus máquinas virtuales (192.168.X.0) con dos punteros (para tus equipos ubuntu y w2008r2). Prueba la zona.
+-  sudo gedit /etc/bind/named.conf.default-zones
+	- crear zona inversa nueva: 
+		zone "127.168.192.in-addr.arpa" {
+		type master : Primario en windows
+		file "/etc/bind/db.127.168.192";
+	- copiar la zona db.127 : sudo cp db.127.168.192
+	- "@ IN NS ubuntu12.dpaw.daw.com."
+	- "@ IN SOA dpaw.daw.com. ubuntu12.dpaw.daw.com."
+	- "(Parte de host de UBUNTU)IN PTR (nombre de dominio completo FQDN)"
+	- "(Parte de host de WINDOWS). IN PTR (nombre de dominio completo FQDN)"
+
+	PRUEBA CON NSLOOKUP
+
+3. Configura tu máquina real para que mande las peticiones DNS a tu servidor Windows 2008 R2.
+
+- configurar la configuración de red de la máquina virtual para que el equipo solicite 
+  servicio DNS al equipo virtual.
+4. Prueba en tu máquina real las dos zonas (directa e inversa) creadas en la práctica.
